@@ -59,6 +59,7 @@ def _print_welcome():
     print('-' * 50)
     print('What would you like to do today?')
     print('[C]reate client')
+    print('[L]ist clients')
     print('[U]pdate')
     print('[D]elete client')
     print('[S]earch client')
@@ -91,6 +92,8 @@ if __name__ == '__main__':
     if command == 'C':
         client_name = _get_client_name()
         create_client(client_name)
+        list_clients()
+    elif command == 'L':
         list_clients()
     elif command == 'D':
         client_name = _get_client_name()
