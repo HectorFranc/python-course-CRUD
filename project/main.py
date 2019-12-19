@@ -25,7 +25,7 @@ def _add_coma():
 
 
 def _print_welcome():
-    print('WELCOME TO HECTOR VENTAS')
+    print('WELCOME TO HECTOR VENTAS'.center(50))
     print('-' * 50)
     print('What would you like to do today?')
     print('[C]reate client')
