@@ -1,3 +1,4 @@
+import sys
 
 clients = 'pablo,ricardo,'
 
@@ -64,7 +65,18 @@ def _print_welcome():
 
 
 def _get_client_name():
-    return input('What is the client name?')
+    client_name = None
+
+    while not client_name:
+        client_name = input('What is the client name?')
+        if client_name.lower() == 'exit':
+            client_name = None
+            break
+
+    if not client_name:
+        sys.exit()
+
+    return client_name
 
 
 def _message_client_not_in_client_list():
