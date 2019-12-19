@@ -36,6 +36,17 @@ def delete_client(client_name):
         _message_client_not_in_client_list()
 
 
+def search_client(client_name):
+    global clients
+
+    clients_list = clients.split(',')
+    for client in clients_list:
+        if client != client_name:
+            continue
+        else:
+            return True
+
+
 def _add_coma():
     global clients
 
@@ -49,6 +60,7 @@ def _print_welcome():
     print('[C]reate client')
     print('[U]pdate')
     print('[D]elete client')
+    print('[S]earch client')
 
 
 def _get_client_name():
@@ -57,6 +69,7 @@ def _get_client_name():
 
 def _message_client_not_in_client_list():
     print('Error: Client is not in clients list')
+
 
 if __name__ == '__main__':
     _print_welcome()
@@ -76,5 +89,13 @@ if __name__ == '__main__':
         updated_client_name = input('What is the updated client name?')
         update_client(client_name, updated_client_name)
         list_clients()
+    elif command == 'S':
+        client_name = _get_client_name()
+        found = search_client(client_name)
+
+        if found:
+            print('The client is in the client\'s list')
+        else:
+            print('The client {} is not in our client\'s list'.format(client_name))
     else:
         print('Invalid command')
