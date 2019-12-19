@@ -36,6 +36,8 @@ def create_client(client):
 def list_clients():
     global clients
 
+    print(' id | name | company | email | position ')
+    print('*' * 50)
     for i, client in enumerate(clients):
         print('{id} | {name} | {company} | {email} | {position}'.format(
             id=i,
